@@ -17,7 +17,7 @@ export class PokeTableComponent implements OnInit {
   dataSource = new MatTableDataSource<any>(this.data);
 
 
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
 
   pokemons = [];
 
@@ -60,7 +60,7 @@ export class PokeTableComponent implements OnInit {
   }
 
 
-  getRow(row){
+  getRow(row:any){
     //console.log(row);
     this.router.navigateByUrl(`/pokeDetail/${row.position}`)
   }
